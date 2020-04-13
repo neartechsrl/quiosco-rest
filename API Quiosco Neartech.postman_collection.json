@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "dd6b37ec-e65f-4eeb-bcf6-212c5a1e1f62",
+		"name": "API Quiosco Neartech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Parametros",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NTQuiosco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.11:3000/parametros",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"11"
+					],
+					"port": "3000",
+					"path": [
+						"parametros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Arbol Clasificador",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NTQuiosco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.11:3000/arbol_clasificador",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"11"
+					],
+					"port": "3000",
+					"path": [
+						"arbol_clasificador"
+					]
+				},
+				"description": "Recuperar árbol de clasificador Tango"
+			},
+			"response": []
+		},
+		{
+			"name": "Artículos por Busqueda",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NTQuiosco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.11:3000/articulos?clasificador=1&q=ACERO&page=1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"11"
+					],
+					"port": "3000",
+					"path": [
+						"articulos"
+					],
+					"query": [
+						{
+							"key": "clasificador",
+							"value": "1"
+						},
+						{
+							"key": "q",
+							"value": "ACERO"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Recuperar Artículos según criterio de búsqueda"
+			},
+			"response": []
+		},
+		{
+			"name": "Artículos por Carpeta Clasificador",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NTQuiosco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.11:3000/articulos?page=1&binary_img=0&id-folder=194",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"11"
+					],
+					"port": "3000",
+					"path": [
+						"articulos"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "binary_img",
+							"value": "0"
+						},
+						{
+							"key": "id-folder",
+							"value": "194"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grabar Pedido",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NTQuiosco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"detalle\":[\r\n    {\r\n      \"codigo\":\"002600000080\",\r\n      \"cantidad\":\"2\",\r\n      \"precio\":\"56.128\",\r\n      \"descuento\":\"0\"\r\n    },\r\n    {\r\n      \"codigo\":\"002600000100\",\r\n      \"cantidad\":\"1\",\r\n      \"precio\":\"56.985\",\r\n      \"descuento\":\"0\"\r\n    }\r\n  ],\r\n  \"total\":\"1148.6436\",\r\n  \"leyenda_1\":\"\",\r\n  \"leyenda_2\":\"\",\r\n  \"leyenda_3\":\"\",\r\n  \"leyenda_4\":\"\",\r\n  \"leyenda_5\":\"\",\r\n  \"codigo_transporte\":\"1\",\r\n  \"nombre\":\"\",\r\n  \"domicilio\":\"\",\r\n  \"documento\":\"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.11:3000/pedido",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"11"
+					],
+					"port": "3000",
+					"path": [
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "123456789",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "NTQuiosco",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
